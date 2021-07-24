@@ -6,3 +6,5 @@ aaa
 
 
 pasd[jakfpjdifhsiofah
+
+(game not finished also was only created as learning experience)
