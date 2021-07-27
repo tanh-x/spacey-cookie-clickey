@@ -328,6 +328,7 @@
               </div>  
               
             </div>
+            
 
             <div style="font-size: 1.2rem; animation-delay: .9s; opacity: 0%;
             " class="desc-slide">
@@ -673,7 +674,7 @@ export default {
       // iteratively add more planets
       for (let i = 0; i < planet_count; i++) {
         let rng_category = Math.random()
-        var p_giant = Math.min(0.7, Math.sqrt(i)/9 + 0.1)
+        var p_giant = Math.min(0.7, Math.sqrt(i)/(planet_count*0.8) + 0.1)
         var genp = {
           name: '',
           category: '',
@@ -1087,7 +1088,7 @@ export default {
 
               this.addMsg("Surveying system orbital plane..")
               setTimeout(() => {
-                let gen = generateSystem(7, 0, '')
+                let gen = generateSystem(400, 0.05, '')
                 this.star_systems[gen.system] = gen
                 this.loc_system = this.star_systems[gen.system]
                 this.loc_planet = choose(this.loc_system.bodies.slice(1))
@@ -1308,8 +1309,11 @@ export default {
 
   }
 
+
+
   ul {
     margin: 0.2rem;
+
   }
   h1,h2,h3,h4,h5 {
     margin-top: 0.1rem;
